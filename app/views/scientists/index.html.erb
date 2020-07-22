@@ -1,0 +1,10 @@
+<h1>All Scientists</h1>
+
+<% @scientists.each do |scientist| %>
+    <li><%= link_to scientist.name, scientist_path(scientist) %></li>
+<% end %>
+
+
+<br><%= button_to "Create a Scientist", new_scientist_path, method: :get%>
+<br><%= button_to "Add a Mission", new_mission_path, method: :get%>
+

@@ -1,0 +1,7 @@
+<h2>Edit Scientist</h2>
+
+<%= render partial: 'form' %>
+
+<br><%= button_to "Back to Scientist Page", scientist_path(@scientist), method: :get%>
+<br><%= button_to "Delete Scientist", @scientist, method: :delete %>
+<br><%= button_to "Back to All Scientists", scientists_path, method: :get%>

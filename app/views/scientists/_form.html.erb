@@ -1,0 +1,18 @@
+<%= form_for @scientist do |f| %>
+    <% if @scientist.errors.any? %>
+        <div id="error_explanations">
+        <h3>The following <%= pluralize(@scientist.errors.count, "error") %> need(s) to be corrected:</h3>
+            <% @scientist.errors.full_messages.each do |message| %>
+                <%= message %>
+            <% end %>
+        </div>
+    <% end %><br>
+    
+    <%= f.label :name %>:
+    <%= f.text_field :name %>
+
+    <%= f.label :field_of_study %>:
+    <%= f.text_field :field_of_study %>
+
+    <%= f.submit %>
+<% end %>

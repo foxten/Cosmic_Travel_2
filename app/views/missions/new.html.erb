@@ -1,0 +1,22 @@
+<h2> New Mission </h2>
+<%= form_for @mission do |f| %>
+    <% if @mission.errors.any? %>
+        <div id="error_explanations">
+        <h3>The following <%= pluralize(@mission.errors.count, "error") %> need(s) to be corrected:</h3>
+            <% @mission.errors.full_messages.each do |message| %>
+                <%= message %>
+            <% end %>
+        </div>
+    <% end %><br>
+    
+    <%= f.label :mission_name %>:
+    <%= f.text_field :name %>
+
+    <br><%= f.label :scientist %>:
+    <%= f.collection_select :scientist_id, Scientist.all, :id, :name %>
+
+    <br><%= f.label :planet %>:
+    <%= f.collection_select :planet_id, Planet.all, :id, :name %>    
+
+    <%= f.submit %>
+<% end %>
